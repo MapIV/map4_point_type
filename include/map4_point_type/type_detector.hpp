@@ -10,27 +10,42 @@ namespace map4_pcl_extensions
 {
 enum class PointType
 {
-  PointXYZ = 0,
-  PointXYZI = 1,
-  PointXYZIR = 3,
-  PointXYZIRT = 7,
-  PointXYZRGB = 8,
-  PointXYZIS = 17,
-  PointXYZISC = 49,
-  PointXYZRGBS = 24,
-  PointXYZIRGBS = 25,
-  PointXYZIRGBSC = 57,
-  PointXYZIT = 67,
-  PointOUSTER = 131,
+  // Float
+  PointXYZ = 1,
+  PointXYZI = 2,
+  PointXYZIR = 4,
+  PointXYZIRT = 8,
+  PointXYZRGB = 9,
+  PointXYZIS = 18,
+  PointXYZISC = 50,
+  PointXYZRGBS = 25,
+  PointXYZIRGBS = 26,
+  PointXYZIRGBSC = 58,
+  PointXYZIT = 68,
+  PointOUSTER = 132,
+
+  // Double
+  PointDXYZ = -1,
+  PointDXYZI = -2,
+  PointDXYZIR = -4,
+  PointDXYZIRT = -8,
+  PointDXYZRGB = -9,
+  PointDXYZIS = -18,
+  PointDXYZISC = -50,
+  PointDXYZRGBS = -25,
+  PointDXYZIRGBS = -26,
+  PointDXYZIRGBSC = -58,
+  PointDXYZIT = -68,
 };
 
 PointType detectType(const std::string& file_name);
-PointType detectType(const std::vector<std::string>& fields);
-int checkFieldName(const std::string& field_name);
+PointType detectType(const std::vector<pcl::PCLPointField>& fields);
+int checkFieldName(const pcl::PCLPointField& field);
 inline PointType castPointType(const int& i)
 {
   switch (i)
   {
+    // Float
     case static_cast<int>(PointType::PointXYZ):
       return PointType::PointXYZ;
     case static_cast<int>(PointType::PointXYZI):
@@ -55,9 +70,34 @@ inline PointType castPointType(const int& i)
       return PointType::PointXYZIT;
     case static_cast<int>(PointType::PointOUSTER):
       return PointType::PointOUSTER;
+
+    // Double
+    case static_cast<int>(PointType::PointDXYZ):
+      return PointType::PointDXYZ;
+    case static_cast<int>(PointType::PointDXYZI):
+      return PointType::PointDXYZI;
+    case static_cast<int>(PointType::PointDXYZIR):
+      return PointType::PointDXYZIR;
+    case static_cast<int>(PointType::PointDXYZIRT):
+      return PointType::PointDXYZIRT;
+    case static_cast<int>(PointType::PointDXYZRGB):
+      return PointType::PointDXYZRGB;
+    case static_cast<int>(PointType::PointDXYZIS):
+      return PointType::PointDXYZIS;
+    case static_cast<int>(PointType::PointDXYZISC):
+      return PointType::PointDXYZISC;
+    case static_cast<int>(PointType::PointDXYZRGBS):
+      return PointType::PointDXYZRGBS;
+    case static_cast<int>(PointType::PointDXYZIRGBS):
+      return PointType::PointDXYZIRGBS;
+    case static_cast<int>(PointType::PointDXYZIRGBSC):
+      return PointType::PointDXYZIRGBSC;
+    case static_cast<int>(PointType::PointDXYZIT):
+      return PointType::PointDXYZIT;
     default:
       std::cerr << "\033[31;1mError: Undefined PointType is detected: " << i << "\033[m" << std::endl;
       std::cerr << "Supported types are below:" << std::endl;
+      // Float
       std::cerr << "\tPointXYZ" << std::endl;
       std::cerr << "\tPointXYZI" << std::endl;
       std::cerr << "\tPointXYZIR" << std::endl;
@@ -69,6 +109,17 @@ inline PointType castPointType(const int& i)
       std::cerr << "\tPointXYZIRGBSC" << std::endl;
       std::cerr << "\tPointXYZIT" << std::endl;
       std::cerr << "\tPointOUSTER" << std::endl;
+      // Double
+      std::cerr << "\tPointDXYZ" << std::endl;
+      std::cerr << "\tPointDXYZI" << std::endl;
+      std::cerr << "\tPointDXYZIR" << std::endl;
+      std::cerr << "\tPointDXYZIRT" << std::endl;
+      std::cerr << "\tPointDXYZRGB" << std::endl;
+      std::cerr << "\tPointDXYZIS" << std::endl;
+      std::cerr << "\tPointDXYZISC" << std::endl;
+      std::cerr << "\tPointDXYZRGBS" << std::endl;
+      std::cerr << "\tPointDXYZIRGBSC" << std::endl;
+      std::cerr << "\tPointDXYZIT" << std::endl;
       std::cerr << "\033[m" << std::flush;
       exit(4);
   }
@@ -101,6 +152,16 @@ inline PointType configCastPointType(const int& i)
       return PointType::PointXYZIT;
     case 11:
       return PointType::PointOUSTER;
+    case -1:
+      return PointType::PointDXYZ;
+    case -2:
+      return PointType::PointDXYZI;
+    case -5:
+      return PointType::PointDXYZRGB;
+    case -7:
+      return PointType::PointDXYZISC;
+    case -10:
+      return PointType::PointDXYZIRGBSC;
     default:
       std::cerr << "\033[31;1mError: Undefined PointType is detected: " << i << "\033[m" << std::endl;
       exit(4);

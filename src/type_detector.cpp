@@ -8,31 +8,33 @@ PointType detectType(const std::string& file_name)
   pcl::PCLPointCloud2 cloud;
   reader.readHeader(file_name, cloud);
 
-  std::vector<std::string> field_vec;
-  int type_num = 0;
-  for (int i = 0; i < cloud.fields.size(); i++)
-  {
-    type_num += checkFieldName(cloud.fields[i].name);
-  }
-
-  return castPointType(type_num);
+  return detectType(cloud.fields);
 }
 
-PointType detectType(const std::vector<std::string>& fields)
+PointType detectType(const std::vector<pcl::PCLPointField>& fields)
 {
-  int type_num = 0;
+  int type_num = 1, sign = 1;
   for (int i = 0; i < fields.size(); i++)
   {
-    type_num += checkFieldName(fields[i]);
+    int ret;
+    if (ret = checkFieldName(fields[i]) < 0)
+      sign = -1;
+    else
+      type_num += ret;
   }
-  return castPointType(type_num);
+  return castPointType(sign * type_num);
 }
 
-int checkFieldName(const std::string& field_name)
+int checkFieldName(const pcl::PCLPointField& field)
 {
-  if (field_name == "x" || field_name == "y" || field_name == "z")
+  std::string field_name = field.name;
+  std::uint8_t datatype = field.datatype;
+  if ((field_name == "x" || field_name == "y" || field_name == "z") && datatype == 7)
   {
-    return 0;
+    if (datatype == 7)
+      return 0;
+    else if (datatype == 8)
+      return -1;
   }
   else if (field_name == "intensity")
   {
