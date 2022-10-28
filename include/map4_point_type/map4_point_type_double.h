@@ -49,7 +49,7 @@ struct PointDXYZIRT
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRT, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
-                                                   std::uint16_t, ring, ring)(float, time, time))
+                                                    std::uint16_t, ring, ring)(float, time, time))
 
 struct PointDXYZIR
 {
@@ -59,8 +59,9 @@ struct PointDXYZIR
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIR, (double, x, x)(double, y, y)(double, z, z)(float, intensity,
-                                                                                      intensity)(std::uint16_t, ring, ring))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIR,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(std::uint16_t,
+                                                                                                          ring, ring))
 
 struct PointDXYZIS
 {
@@ -71,8 +72,8 @@ struct PointDXYZIS
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIS,
-                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity,
-                                                                          intensity)(double, stamp, stamp))
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(double, stamp,
+                                                                                                          stamp))
 
 struct PointDXYZISC
 {
@@ -84,8 +85,8 @@ struct PointDXYZISC
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZISC,
-                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity,
-                                                                          intensity)(double, stamp, stamp)(unsigned char, classification, classification))
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
+                                      double, stamp, stamp)(unsigned char, classification, classification))
 
 struct PointDXYZRGBS
 {
@@ -95,7 +96,8 @@ struct PointDXYZRGBS
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZRGBS, (double, x, x)(double, y, y)(double, z, z)(float, rgb, rgb)(double, stamp, stamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZRGBS,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, rgb, rgb)(double, stamp, stamp))
 
 struct PointDXYZIRGBS
 {
@@ -106,7 +108,10 @@ struct PointDXYZIRGBS
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRGBS, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(float, rgb, rgb)(double, stamp, stamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRGBS,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity,
+                                                                             intensity)(float, rgb, rgb)(double, stamp,
+                                                                                                         stamp))
 
 struct PointDXYZIRGBSC
 {
@@ -118,7 +123,10 @@ struct PointDXYZIRGBSC
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRGBSC, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(float, rgb, rgb)(double, stamp, stamp)(unsigned char, classification, classification))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRGBSC,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
+                                      float, rgb, rgb)(double, stamp, stamp)(unsigned char, classification,
+                                                                             classification))
 
 struct PointDXYZIT
 {
@@ -129,6 +137,7 @@ struct PointDXYZIT
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIT, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(std::uint16_t, ring, ring)(double, timestamp, timestamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIT, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
+                                                   std::uint16_t, ring, ring)(double, timestamp, timestamp))
 
 #endif

@@ -33,8 +33,9 @@ struct PointXYZIR
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIR, (float, x, x)(float, y, y)(float, z, z)(float, intensity,
-                                                                                      intensity)(std::uint16_t, ring, ring))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIR,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint16_t,
+                                                                                                       ring, ring))
 
 struct PointXYZIS
 {
@@ -44,9 +45,8 @@ struct PointXYZIS
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIS,
-                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity,
-                                                                          intensity)(double, stamp, stamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIS, (float, x, x)(float, y, y)(float, z, z)(float, intensity,
+                                                                                      intensity)(double, stamp, stamp))
 
 struct PointXYZISC
 {
@@ -57,9 +57,8 @@ struct PointXYZISC
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZISC,
-                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity,
-                                                                          intensity)(double, stamp, stamp)(unsigned char, classification, classification))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZISC, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
+                                                   double, stamp, stamp)(unsigned char, classification, classification))
 
 struct PointXYZRGBS
 {
@@ -69,7 +68,8 @@ struct PointXYZRGBS
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZRGBS, (float, x, x)(float, y, y)(float, z, z)(float, rgb, rgb)(double, stamp, stamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZRGBS,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, rgb, rgb)(double, stamp, stamp))
 
 struct PointXYZIRGBS
 {
@@ -80,7 +80,8 @@ struct PointXYZIRGBS
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBS, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(float, rgb, rgb)(double, stamp, stamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBS, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
+                                                     float, rgb, rgb)(double, stamp, stamp))
 
 struct PointXYZIRGBSC
 {
@@ -92,7 +93,9 @@ struct PointXYZIRGBSC
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBSC, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(float, rgb, rgb)(double, stamp, stamp)(unsigned char, classification, classification))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBSC,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(float, rgb, rgb)(
+                                      double, stamp, stamp)(unsigned char, classification, classification))
 
 struct PointXYZIT
 {
@@ -103,7 +106,8 @@ struct PointXYZIT
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIT, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint16_t, ring, ring)(double, timestamp, timestamp))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIT, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
+                                                  std::uint16_t, ring, ring)(double, timestamp, timestamp))
 
 struct PointOUSTER
 {
@@ -117,6 +121,9 @@ struct PointOUSTER
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointOUSTER, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint32_t, t, t)(std::uint16_t, reflectivity, reflectivity)(std::uint8_t, ring, ring)(std::uint16_t, ambient, ambient)(std::uint32_t, range, range))
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointOUSTER, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
+                                                   std::uint32_t, t, t)(std::uint16_t, reflectivity, reflectivity)(
+                                                   std::uint8_t, ring, ring)(std::uint16_t, ambient,
+                                                                             ambient)(std::uint32_t, range, range))
 
 #endif
