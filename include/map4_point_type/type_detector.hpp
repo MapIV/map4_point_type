@@ -23,7 +23,7 @@ enum class PointType
   PointXYZIRGBSC = 58,
   PointXYZIT = 68,
   PointOUSTER = 132,
-  PointREIGL = 262,
+  PointRIEGL = 262,
 
   // Double
   PointDXYZ = -1,
@@ -72,7 +72,7 @@ inline PointType castPointType(const int& i)
     case static_cast<int>(PointType::PointOUSTER):
       return PointType::PointOUSTER;
     case static_cast<int>(PointType::PointRIEGL):
-      return PointType::PointREIGL;
+      return PointType::PointRIEGL;
 
     // Double
     case static_cast<int>(PointType::PointDXYZ):
