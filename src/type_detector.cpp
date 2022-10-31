@@ -68,6 +68,10 @@ int checkFieldName(const pcl::PCLPointField& field)
   {
     return 128;
   }
+  else if (field_name == "amplitude")
+  {
+    return 256;
+  }
   else
   {
     return 0;
