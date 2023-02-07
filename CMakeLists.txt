@@ -9,6 +9,7 @@ find_package(PCL  REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   DEPENDS PCL
+  LIBRARIES map4_point_type
 )
 
 include_directories(include ${PCL_INCLUDE_DIRS})
