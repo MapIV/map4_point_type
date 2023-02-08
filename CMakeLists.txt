@@ -16,8 +16,8 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
 add_library(map4_point_type
-  include/map4_point_type/map4_point_type.h
-  # include/map4_point_type/type_detector.hpp
+  src/map4_point_type.cpp
+  src/map4_point_type_double.cpp
   src/type_detector.cpp
 )
 target_link_libraries(map4_point_type ${catkin_LIBRARIES} ${PCL_LIBRARIES})
