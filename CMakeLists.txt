@@ -9,6 +9,7 @@ find_package(PCL  REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   DEPENDS PCL
+  LIBRARIES map4_point_type
 )
 
 include_directories(include ${PCL_INCLUDE_DIRS})
@@ -21,6 +22,4 @@ add_library(map4_point_type
   src/type_detector.cpp
 )
 target_link_libraries(map4_point_type ${catkin_LIBRARIES} ${PCL_LIBRARIES})
-
-# add_library(map4_point_type INTERFACE)
-# target_include_directories(map4_point_type INTERFACE .)
+add_dependencies(map4_point_type ${catkin_EXPORTED_TARGETS})
