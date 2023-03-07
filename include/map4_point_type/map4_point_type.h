@@ -126,4 +126,27 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(PointOUSTER, (float, x, x)(float, y, y)(float,
                                                    std::uint8_t, ring, ring)(std::uint16_t, ambient,
                                                                              ambient)(std::uint32_t, range, range))
 
+struct PointXYZIRADT
+{
+  PCL_ADD_POINT4D;
+  float intensity;
+  uint16_t ring;
+  float azimuth;
+  float distance;
+  uint8_t return_type;
+  double time_stamp;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRADT,
+                                  (float, x, x)
+                                  (float, y, y)
+                                  (float, z, z)
+                                  (float, intensity, intensity)
+                                  (std::uint16_t, ring, ring)
+                                  (float, azimuth, azimuth)
+                                  (float, distance, distance)
+                                  (std::uint8_t, return_type, return_type)
+                                  (double, time_stamp, time_stamp))
+
 #endif
