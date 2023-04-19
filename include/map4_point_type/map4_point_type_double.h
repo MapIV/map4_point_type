@@ -69,7 +69,7 @@ struct PointDXYZIS
   PCL_ADD_INTENSITY;
   double stamp;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-} EIGEN_ALIGN16;
+};
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIS,
                                   (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(double, stamp,
