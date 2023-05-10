@@ -6,6 +6,8 @@
   <maintainer email="tomoya.sato@tier4.jp">Tomoya-Sato</maintainer>
   <license>TODO</license>
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>pcl_ros</build_depend>
+  <run_depend>pcl_ros</run_depend>
   <export>
   </export>
 </package>
