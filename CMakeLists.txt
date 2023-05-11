@@ -4,7 +4,7 @@ project(map4_point_type)
 set(CMAKE_CXX_STANDARD 14)
 
 find_package(catkin REQUIRED)
-find_package(PCL  REQUIRED)
+find_package(PCL REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS include
