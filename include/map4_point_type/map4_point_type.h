@@ -143,7 +143,7 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(
                        float, azimuth, azimuth)(float, distance, distance)(std::uint8_t, return_type,
                                                                            return_type)(double, time_stamp, time_stamp))
 
-namespace m4e_pointtype
+namespace m4point_type
 {
 struct PointXYZIL
 {
@@ -153,9 +153,9 @@ struct PointXYZIL
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
-}  // namespace m4e_pointtype
+}  // namespace m4point_type
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(m4e_pointtype::PointXYZIL,
+POINT_CLOUD_REGISTER_POINT_STRUCT(m4point_type::PointXYZIL,
                                   (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint32_t,
                                                                                                        label, label))
 
