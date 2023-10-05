@@ -75,6 +75,8 @@ inline PointType castPointType(const int& i)
       return PointType::PointOUSTER;
     case static_cast<int>(PointType::PointRIEGL):
       return PointType::PointRIEGL;
+    case static_cast<int>(PointType::PointXYZIL):
+      return PointType::PointXYZIL;
 
     // Double
     case static_cast<int>(PointType::PointDXYZ):
@@ -99,6 +101,8 @@ inline PointType castPointType(const int& i)
       return PointType::PointDXYZIRGBSC;
     case static_cast<int>(PointType::PointDXYZIT):
       return PointType::PointDXYZIT;
+    case static_cast<int>(PointType::PointDXYZIL):
+      return PointType::PointDXYZIL;
     default:
       std::cerr << "\033[31;1mError: Undefined PointType is detected: " << i << "\033[m" << std::endl;
       std::cerr << "Supported types are below:" << std::endl;
@@ -114,6 +118,7 @@ inline PointType castPointType(const int& i)
       std::cerr << "\tPointXYZIRGBSC" << std::endl;
       std::cerr << "\tPointXYZIT" << std::endl;
       std::cerr << "\tPointOUSTER" << std::endl;
+      std::cerr << "\tPointXYZIL" << std::endl;
       // Double
       std::cerr << "\tPointDXYZ" << std::endl;
       std::cerr << "\tPointDXYZI" << std::endl;
@@ -125,6 +130,7 @@ inline PointType castPointType(const int& i)
       std::cerr << "\tPointDXYZRGBS" << std::endl;
       std::cerr << "\tPointDXYZIRGBSC" << std::endl;
       std::cerr << "\tPointDXYZIT" << std::endl;
+      std::cerr << "\tPointDXYZIL" << std::endl;
       std::cerr << "\033[m" << std::flush;
       exit(4);
   }
