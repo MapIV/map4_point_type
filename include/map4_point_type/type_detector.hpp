@@ -24,6 +24,7 @@ enum class PointType
   PointXYZIT = 68,
   PointOUSTER = 132,
   PointRIEGL = 262,
+  PointXYZIL = 514,
 
   // Double
   PointDXYZ = -1,
@@ -37,6 +38,7 @@ enum class PointType
   PointDXYZIRGBS = -26,
   PointDXYZIRGBSC = -58,
   PointDXYZIT = -68,
+  PointDXYZIL = -514,
 };
 
 PointType detectType(const std::string& file_name);

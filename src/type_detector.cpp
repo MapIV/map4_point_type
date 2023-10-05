@@ -72,6 +72,10 @@ int checkFieldName(const pcl::PCLPointField& field)
   {
     return 256;
   }
+  else if (field_name == "label")
+  {
+    return 512;
+  }
   else
   {
     return 0;
