@@ -140,4 +140,16 @@ struct PointDXYZIT
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIT, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
                                                    std::uint16_t, ring, ring)(double, timestamp, timestamp))
 
+struct PointDXYZIL
+{
+  double x, y, z;
+  PCL_ADD_INTENSITY;
+  std::uint32_t label;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIL,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(std::uint32_t,
+                                                                                                          label, label))
+
 #endif
