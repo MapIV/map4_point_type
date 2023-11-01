@@ -159,4 +159,21 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(m4point_type::PointXYZIL,
                                   (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint32_t,
                                                                                                        label, label))
 
+struct PointXYZIRGBSCL
+{
+  PCL_ADD_POINT4D;
+  float intensity;
+  PCL_ADD_INTENSITY;
+  PCL_ADD_RGB;
+  double stamp;
+  unsigned char classification;
+  std::uint32_t label;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBSCL,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(float, rgb, rgb)(
+                                      double, stamp, stamp)(unsigned char, classification,
+                                                            classification)(std::uint32_t, label, label))
+
 #endif
