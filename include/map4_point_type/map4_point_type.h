@@ -162,7 +162,6 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(m4point_type::PointXYZIL,
 struct PointXYZIRGBSCL
 {
   PCL_ADD_POINT4D;
-  float intensity;
   PCL_ADD_INTENSITY;
   PCL_ADD_RGB;
   double stamp;
