@@ -143,6 +143,16 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(
                        float, azimuth, azimuth)(float, distance, distance)(std::uint8_t, return_type,
                                                                            return_type)(double, time_stamp, time_stamp))
 
+struct PointXYZTMP
+{
+  PCL_ADD_POINT4D;
+  uint8_t intensity;
+  uint16_t channel;
+  uint32_t time_stamp;
+};
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZTMP, (float, x, x)(float, y, y)(float, z, z)(uint8_t, intensity, intensity)(uint16_t, channel, channel)(uint32_t, time_stamp, time_stamp))
+
 namespace m4point_type
 {
 struct PointXYZIL
