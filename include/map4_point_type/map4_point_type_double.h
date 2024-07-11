@@ -9,8 +9,8 @@ struct PointDXYZT
   double x;
   double y;
   double z;
-  std::uint32_t sec;
-  std::uint32_t nsec;
+  uint32_t sec;
+  uint32_t nsec;
 };
 
 struct PointDXYZ
@@ -43,24 +43,24 @@ struct PointDXYZIRT
 {
   double x, y, z;
   PCL_ADD_INTENSITY;
-  std::uint16_t ring;
+  uint16_t ring;
   float time;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRT, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
-                                                    std::uint16_t, ring, ring)(float, time, time))
+                                                    uint16_t, ring, ring)(float, time, time))
 
 struct PointDXYZIR
 {
   double x, y, z;
   PCL_ADD_INTENSITY;
-  std::uint16_t ring;
+  uint16_t ring;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIR,
-                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(std::uint16_t,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(uint16_t,
                                                                                                           ring, ring))
 
 struct PointDXYZIS
@@ -132,24 +132,24 @@ struct PointDXYZIT
 {
   double x, y, z;
   PCL_ADD_INTENSITY;
-  std::uint16_t ring;
+  uint16_t ring;
   double timestamp;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIT, (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
-                                                   std::uint16_t, ring, ring)(double, timestamp, timestamp))
+                                                   uint16_t, ring, ring)(double, timestamp, timestamp))
 
 struct PointDXYZIL
 {
   double x, y, z;
   PCL_ADD_INTENSITY;
-  std::uint32_t label;
+  uint32_t label;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIL,
-                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(std::uint32_t,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(uint32_t,
                                                                                                           label, label))
 
 #endif

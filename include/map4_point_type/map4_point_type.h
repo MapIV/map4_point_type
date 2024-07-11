@@ -9,32 +9,32 @@ struct PointXYZT
   float x;
   float y;
   float z;
-  std::uint32_t sec;
-  std::uint32_t nsec;
+  uint32_t sec;
+  uint32_t nsec;
 };
 
 struct PointXYZIRT
 {
   PCL_ADD_POINT4D;
   PCL_ADD_INTENSITY;
-  std::uint16_t ring;
+  uint16_t ring;
   float time;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRT, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
-                                                   std::uint16_t, ring, ring)(float, time, time))
+                                                   uint16_t, ring, ring)(float, time, time))
 
 struct PointXYZIR
 {
   PCL_ADD_POINT4D;
   PCL_ADD_INTENSITY;
-  std::uint16_t ring;
+  uint16_t ring;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIR,
-                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint16_t,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(uint16_t,
                                                                                                        ring, ring))
 
 struct PointXYZIS
@@ -101,13 +101,13 @@ struct PointXYZIT
 {
   PCL_ADD_POINT4D;
   PCL_ADD_INTENSITY;
-  std::uint16_t ring;
+  uint16_t ring;
   double timestamp;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIT, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
-                                                  std::uint16_t, ring, ring)(double, timestamp, timestamp))
+                                                  uint16_t, ring, ring)(double, timestamp, timestamp))
 
 struct PointOUSTER
 {
@@ -122,9 +122,9 @@ struct PointOUSTER
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointOUSTER, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
-                                                   std::uint32_t, t, t)(std::uint16_t, reflectivity, reflectivity)(
-                                                   std::uint8_t, ring, ring)(std::uint16_t, ambient,
-                                                                             ambient)(std::uint32_t, range, range))
+                                                   uint32_t, t, t)(uint16_t, reflectivity, reflectivity)(
+                                                   uint8_t, ring, ring)(uint16_t, ambient,
+                                                                             ambient)(uint32_t, range, range))
 
 struct PointXYZIRADT
 {
@@ -139,8 +139,8 @@ struct PointXYZIRADT
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(
-    PointXYZIRADT, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint16_t, ring, ring)(
-                       float, azimuth, azimuth)(float, distance, distance)(std::uint8_t, return_type,
+    PointXYZIRADT, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(uint16_t, ring, ring)(
+                       float, azimuth, azimuth)(float, distance, distance)(uint8_t, return_type,
                                                                            return_type)(double, time_stamp, time_stamp))
 
 namespace m4point_type
@@ -149,14 +149,14 @@ struct PointXYZIL
 {
   PCL_ADD_POINT4D;
   PCL_ADD_INTENSITY;
-  std::uint32_t label;
+  uint32_t label;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 }  // namespace m4point_type
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(m4point_type::PointXYZIL,
-                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(std::uint32_t,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(uint32_t,
                                                                                                        label, label))
 
 #endif

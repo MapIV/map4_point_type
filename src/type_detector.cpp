@@ -28,7 +28,7 @@ PointType detectType(const std::vector<pcl::PCLPointField>& fields)
 int checkFieldName(const pcl::PCLPointField& field)
 {
   std::string field_name = field.name;
-  std::uint8_t datatype = field.datatype;
+  uint8_t datatype = field.datatype;
   if ((field_name == "x" || field_name == "y" || field_name == "z"))
   {
     if (datatype == 7)
