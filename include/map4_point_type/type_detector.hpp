@@ -43,8 +43,8 @@ enum class PointType
   PointUNKNOWN = 0,
 };
 
-PointType detectType(const std::string& file_name);
-PointType detectType(const std::vector<pcl::PCLPointField>& fields);
+PointType detectType(const std::string& file_name, const bool allow_other = false);
+PointType detectType(const std::vector<pcl::PCLPointField>& fields, const bool allow_other = false);
 int checkFieldName(const pcl::PCLPointField& field);
 inline PointType castPointType(const int& i, const bool allow_other = false)
 {

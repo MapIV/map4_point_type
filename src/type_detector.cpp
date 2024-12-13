@@ -2,16 +2,16 @@
 
 namespace map4_pcl_extensions
 {
-PointType detectType(const std::string& file_name)
+PointType detectType(const std::string& file_name, const bool allow_other)
 {
   pcl::PCDReader reader;
   pcl::PCLPointCloud2 cloud;
   reader.readHeader(file_name, cloud);
 
-  return detectType(cloud.fields);
+  return detectType(cloud.fields, allow_other);
 }
 
-PointType detectType(const std::vector<pcl::PCLPointField>& fields, const bool allow_other = false)
+PointType detectType(const std::vector<pcl::PCLPointField>& fields, const bool allow_other)
 {
   int type_num = 1, sign = 1;
   for (int i = 0; i < fields.size(); i++)
