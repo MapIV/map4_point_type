@@ -11,7 +11,7 @@ PointType detectType(const std::string& file_name)
   return detectType(cloud.fields);
 }
 
-PointType detectType(const std::vector<pcl::PCLPointField>& fields)
+PointType detectType(const std::vector<pcl::PCLPointField>& fields, const bool allow_other = false)
 {
   int type_num = 1, sign = 1;
   for (int i = 0; i < fields.size(); i++)
@@ -22,7 +22,7 @@ PointType detectType(const std::vector<pcl::PCLPointField>& fields)
     else
       type_num += ret;
   }
-  return castPointType(sign * type_num);
+  return castPointType(sign * type_num, allow_other);
 }
 
 int checkFieldName(const pcl::PCLPointField& field)

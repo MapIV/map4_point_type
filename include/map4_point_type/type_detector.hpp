@@ -39,12 +39,14 @@ enum class PointType
   PointDXYZIRGBSC = -58,
   PointDXYZIT = -68,
   PointDXYZIL = -514,
+
+  PointUNKNOWN = 0,
 };
 
 PointType detectType(const std::string& file_name);
 PointType detectType(const std::vector<pcl::PCLPointField>& fields);
 int checkFieldName(const pcl::PCLPointField& field);
-inline PointType castPointType(const int& i)
+inline PointType castPointType(const int& i, const bool allow_other = false)
 {
   switch (i)
   {
@@ -104,35 +106,42 @@ inline PointType castPointType(const int& i)
     case static_cast<int>(PointType::PointDXYZIL):
       return PointType::PointDXYZIL;
     default:
-      std::cerr << "\033[31;1mError: Undefined PointType is detected: " << i << "\033[m" << std::endl;
-      std::cerr << "Supported types are below:" << std::endl;
-      // Float
-      std::cerr << "\tPointXYZ" << std::endl;
-      std::cerr << "\tPointXYZI" << std::endl;
-      std::cerr << "\tPointXYZIR" << std::endl;
-      std::cerr << "\tPointXYZIRT" << std::endl;
-      std::cerr << "\tPointXYZRGB" << std::endl;
-      std::cerr << "\tPointXYZIS" << std::endl;
-      std::cerr << "\tPointXYZISC" << std::endl;
-      std::cerr << "\tPointXYZRGBS" << std::endl;
-      std::cerr << "\tPointXYZIRGBSC" << std::endl;
-      std::cerr << "\tPointXYZIT" << std::endl;
-      std::cerr << "\tPointOUSTER" << std::endl;
-      std::cerr << "\tPointXYZIL" << std::endl;
-      // Double
-      std::cerr << "\tPointDXYZ" << std::endl;
-      std::cerr << "\tPointDXYZI" << std::endl;
-      std::cerr << "\tPointDXYZIR" << std::endl;
-      std::cerr << "\tPointDXYZIRT" << std::endl;
-      std::cerr << "\tPointDXYZRGB" << std::endl;
-      std::cerr << "\tPointDXYZIS" << std::endl;
-      std::cerr << "\tPointDXYZISC" << std::endl;
-      std::cerr << "\tPointDXYZRGBS" << std::endl;
-      std::cerr << "\tPointDXYZIRGBSC" << std::endl;
-      std::cerr << "\tPointDXYZIT" << std::endl;
-      std::cerr << "\tPointDXYZIL" << std::endl;
-      std::cerr << "\033[m" << std::flush;
-      exit(4);
+      if (allow_other)
+      {
+        return PointType::PointUNKNOWN;
+      }
+      else
+      {
+        std::cerr << "\033[31;1mError: Undefined PointType is detected: " << i << "\033[m" << std::endl;
+        std::cerr << "Supported types are below:" << std::endl;
+        // Float
+        std::cerr << "\tPointXYZ" << std::endl;
+        std::cerr << "\tPointXYZI" << std::endl;
+        std::cerr << "\tPointXYZIR" << std::endl;
+        std::cerr << "\tPointXYZIRT" << std::endl;
+        std::cerr << "\tPointXYZRGB" << std::endl;
+        std::cerr << "\tPointXYZIS" << std::endl;
+        std::cerr << "\tPointXYZISC" << std::endl;
+        std::cerr << "\tPointXYZRGBS" << std::endl;
+        std::cerr << "\tPointXYZIRGBSC" << std::endl;
+        std::cerr << "\tPointXYZIT" << std::endl;
+        std::cerr << "\tPointOUSTER" << std::endl;
+        std::cerr << "\tPointXYZIL" << std::endl;
+        // Double
+        std::cerr << "\tPointDXYZ" << std::endl;
+        std::cerr << "\tPointDXYZI" << std::endl;
+        std::cerr << "\tPointDXYZIR" << std::endl;
+        std::cerr << "\tPointDXYZIRT" << std::endl;
+        std::cerr << "\tPointDXYZRGB" << std::endl;
+        std::cerr << "\tPointDXYZIS" << std::endl;
+        std::cerr << "\tPointDXYZISC" << std::endl;
+        std::cerr << "\tPointDXYZRGBS" << std::endl;
+        std::cerr << "\tPointDXYZIRGBSC" << std::endl;
+        std::cerr << "\tPointDXYZIT" << std::endl;
+        std::cerr << "\tPointDXYZIL" << std::endl;
+        std::cerr << "\033[m" << std::flush;
+        exit(4);
+      }
   }
 }
 inline PointType configCastPointType(const int& i)
