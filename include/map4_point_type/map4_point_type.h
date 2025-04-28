@@ -60,6 +60,19 @@ struct PointXYZISC
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZISC, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
                                                    double, stamp, stamp)(unsigned char, classification, classification))
 
+struct PointXYZISCR
+{
+  PCL_ADD_POINT4D;
+  PCL_ADD_INTENSITY;
+  double stamp;
+  unsigned char classification;
+  std::uint16_t ring;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZISCR, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
+                                                   double, stamp, stamp)(unsigned char, classification, classification)(std::uint16_t, ring, ring))
+
 struct PointXYZRGBS
 {
   PCL_ADD_POINT4D;
@@ -96,6 +109,21 @@ struct PointXYZIRGBSC
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBSC,
                                   (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(float, rgb, rgb)(
                                       double, stamp, stamp)(unsigned char, classification, classification))
+
+struct PointXYZIRGBSCR
+{
+  PCL_ADD_POINT4D;
+  PCL_ADD_INTENSITY;
+  PCL_ADD_RGB;
+  double stamp;
+  unsigned char classification;
+  std::uint16_t ring;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRGBSCR,
+                                  (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(float, rgb, rgb)(
+                                      double, stamp, stamp)(unsigned char, classification, classification)(std::uint16_t, ring, ring))
 
 struct PointXYZIT
 {

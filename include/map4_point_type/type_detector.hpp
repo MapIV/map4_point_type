@@ -18,9 +18,11 @@ enum class PointType
   PointXYZRGB = 9,
   PointXYZIS = 18,
   PointXYZISC = 50,
+  PointXYZISCR = 52,
   PointXYZRGBS = 25,
   PointXYZIRGBS = 26,
   PointXYZIRGBSC = 58,
+  PointXYZIRGBSCR = 60,
   PointXYZIT = 68,
   PointOUSTER = 132,
   PointRIEGL = 262,
@@ -34,9 +36,11 @@ enum class PointType
   PointDXYZRGB = -9,
   PointDXYZIS = -18,
   PointDXYZISC = -50,
+  PointDXYZISCR = -52,
   PointDXYZRGBS = -25,
   PointDXYZIRGBS = -26,
   PointDXYZIRGBSC = -58,
+  PointDXYZIRGBSCR = -60,
   PointDXYZIT = -68,
   PointDXYZIL = -514,
 
@@ -65,12 +69,16 @@ inline PointType castPointType(const int& i, const bool allow_other = false)
       return PointType::PointXYZIS;
     case static_cast<int>(PointType::PointXYZISC):
       return PointType::PointXYZISC;
+    case static_cast<int>(PointType::PointXYZISCR):
+      return PointType::PointXYZISCR;
     case static_cast<int>(PointType::PointXYZRGBS):
       return PointType::PointXYZRGBS;
     case static_cast<int>(PointType::PointXYZIRGBS):
       return PointType::PointXYZIRGBS;
     case static_cast<int>(PointType::PointXYZIRGBSC):
       return PointType::PointXYZIRGBSC;
+    case static_cast<int>(PointType::PointXYZIRGBSCR):
+      return PointType::PointXYZIRGBSCR;
     case static_cast<int>(PointType::PointXYZIT):
       return PointType::PointXYZIT;
     case static_cast<int>(PointType::PointOUSTER):
@@ -95,12 +103,16 @@ inline PointType castPointType(const int& i, const bool allow_other = false)
       return PointType::PointDXYZIS;
     case static_cast<int>(PointType::PointDXYZISC):
       return PointType::PointDXYZISC;
+    case static_cast<int>(PointType::PointDXYZISCR):
+      return PointType::PointDXYZISCR;
     case static_cast<int>(PointType::PointDXYZRGBS):
       return PointType::PointDXYZRGBS;
     case static_cast<int>(PointType::PointDXYZIRGBS):
       return PointType::PointDXYZIRGBS;
     case static_cast<int>(PointType::PointDXYZIRGBSC):
       return PointType::PointDXYZIRGBSC;
+    case static_cast<int>(PointType::PointDXYZIRGBSCR):
+      return PointType::PointDXYZIRGBSCR;
     case static_cast<int>(PointType::PointDXYZIT):
       return PointType::PointDXYZIT;
     case static_cast<int>(PointType::PointDXYZIL):
@@ -122,8 +134,10 @@ inline PointType castPointType(const int& i, const bool allow_other = false)
         std::cerr << "\tPointXYZRGB" << std::endl;
         std::cerr << "\tPointXYZIS" << std::endl;
         std::cerr << "\tPointXYZISC" << std::endl;
+        std::cerr << "\tPointXYZISCR" << std::endl;
         std::cerr << "\tPointXYZRGBS" << std::endl;
         std::cerr << "\tPointXYZIRGBSC" << std::endl;
+        std::cerr << "\tPointXYZIRGBSCR" << std::endl;
         std::cerr << "\tPointXYZIT" << std::endl;
         std::cerr << "\tPointOUSTER" << std::endl;
         std::cerr << "\tPointXYZIL" << std::endl;
@@ -135,8 +149,10 @@ inline PointType castPointType(const int& i, const bool allow_other = false)
         std::cerr << "\tPointDXYZRGB" << std::endl;
         std::cerr << "\tPointDXYZIS" << std::endl;
         std::cerr << "\tPointDXYZISC" << std::endl;
+        std::cerr << "\tPointDXYZISCR" << std::endl;
         std::cerr << "\tPointDXYZRGBS" << std::endl;
         std::cerr << "\tPointDXYZIRGBSC" << std::endl;
+        std::cerr << "\tPointDXYZIRGBSCR" << std::endl;
         std::cerr << "\tPointDXYZIT" << std::endl;
         std::cerr << "\tPointDXYZIL" << std::endl;
         std::cerr << "\033[m" << std::flush;

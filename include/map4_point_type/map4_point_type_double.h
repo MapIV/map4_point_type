@@ -81,12 +81,29 @@ struct PointDXYZISC
   PCL_ADD_INTENSITY;
   double stamp;
   unsigned char classification;
+  unsigned char edge_of_flight_line;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZISC,
                                   (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
-                                      double, stamp, stamp)(unsigned char, classification, classification))
+                                      double, stamp, stamp)(unsigned char, classification, classification)(unsigned char, edge_of_flight_line, edge_of_flight_line))
+
+struct PointDXYZISCR
+{
+  double x, y, z;
+  PCL_ADD_INTENSITY;
+  double stamp;
+  unsigned char classification;
+  std::uint16_t ring;
+  unsigned char edge_of_flight_line;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZISCR,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
+                                      double, stamp, stamp)(unsigned char, classification, classification)(
+                                      std::uint16_t, ring, ring)(unsigned char, edge_of_flight_line, edge_of_flight_line))
 
 struct PointDXYZRGBS
 {
@@ -127,6 +144,23 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRGBSC,
                                   (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
                                       float, rgb, rgb)(double, stamp, stamp)(unsigned char, classification,
                                                                              classification))
+
+struct PointDXYZIRGBSCR
+{
+  double x, y, z;
+  PCL_ADD_INTENSITY;
+  PCL_ADD_RGB;
+  double stamp;
+  unsigned char classification;
+  std::uint16_t ring;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointDXYZIRGBSCR,
+                                  (double, x, x)(double, y, y)(double, z, z)(float, intensity, intensity)(
+                                      float, rgb, rgb)(double, stamp, stamp)(unsigned char, classification,
+                                                                             classification)(std::uint16_t, ring,
+                                                                                              ring))
 
 struct PointDXYZIT
 {
