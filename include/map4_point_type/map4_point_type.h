@@ -143,6 +143,20 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(
                        float, azimuth, azimuth)(float, distance, distance)(std::uint8_t, return_type,
                                                                            return_type)(double, time_stamp, time_stamp))
 
+struct PointLivox
+{
+  PCL_ADD_POINT4D;
+  float intensity;
+  uint8_t tag;
+  uint8_t line;
+  double timestamp;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointLivox, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
+                                                  std::uint8_t, tag, tag)(std::uint8_t, line, line)(double, timestamp,
+                                                                                                     timestamp))
+
 namespace m4point_type
 {
 struct PointXYZIL
