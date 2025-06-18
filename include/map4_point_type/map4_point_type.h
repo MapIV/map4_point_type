@@ -115,7 +115,7 @@ struct PointOUSTER
   PCL_ADD_INTENSITY;
   uint32_t t;
   uint16_t reflectivity;
-  uint8_t ring;
+  uint16_t ring;
   uint16_t ambient;
   uint32_t range;
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
@@ -123,7 +123,7 @@ struct PointOUSTER
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(PointOUSTER, (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
                                                    std::uint32_t, t, t)(std::uint16_t, reflectivity, reflectivity)(
-                                                   std::uint8_t, ring, ring)(std::uint16_t, ambient,
+                                                   std::uint16_t, ring, ring)(std::uint16_t, ambient,
                                                                              ambient)(std::uint32_t, range, range))
 
 struct PointXYZIRADT
